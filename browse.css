@@ -1,0 +1,80 @@
+/* browse.css - contains CSS for product browsing page specifically */
+
+/* view buttons in top right corner of page */
+.view_options {
+    display: inline-block;
+    border: 1.5px solid black;
+    text-align: center;
+    padding: 2px 2px;
+    font-family: Nunito, sans-serif;
+    float: right;
+    margin-top: 30px;
+}
+
+#relaxed_button {
+    background-color: #D2ACAC;
+}
+
+/* sets up grid for browse page */
+main {
+    display: grid;
+    grid-gap: 6px;
+    /* spacing should be the same, so can use repeat function */
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    margin: 10px;
+    line-height: 10px;
+    background-color: white;
+    font-weight: lighter;
+    font-size:27px;
+    justify-content: center;
+    justify-items: center;
+    align-items: stretch;
+    align-content: center;
+    grid-auto-rows: 1fr;
+    /* automatically populates the page by row */
+    grid-auto-flow: row;
+}
+
+/* Creates the circular roll images */
+.single_roll_image {
+    width: 150px;
+    height: auto;
+    border: medium solid #B27338;
+    /* makes circular image */
+    border-radius: 100%;
+}
+
+/* makes font size a bit smaller for the text "per roll" */
+.price {
+    justify-content: space-between;
+    font-size: 15px;
+    font-weight: lighter;
+}
+
+/* creates the box for each product */
+.roll {
+    box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.2);
+    background-color: #EEEE;
+    border: medium solid #A18484;
+    text-align: center;
+    padding: 50px 65px 15px;
+    border-radius: 40px;
+}
+
+/* this section makes all the padding match for box size */
+.original {
+    padding: 50px 91px 15px;
+}
+
+.walnut {
+    padding: 50px 95px 15px;
+}
+
+.pumpkin {
+    padding: 50px 82px 15px;
+}
+
+.caramel {
+    padding: 50px 69px 15px;
+}

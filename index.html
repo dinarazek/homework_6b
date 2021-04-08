@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BUN BUN BAKE SHOP</title>
+    <!--  access to different fonts -->
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Nunito" />
+    <!-- links CSS files -->
+    <link href="style.css" type="text/css" rel="stylesheet">
+    <link href="home.css" type="text/css" rel="stylesheet">
+    <!-- link JS files -->
+    <script src="productdetail.js" type="text/javascript"></script>
+</head>
+
+<body onload="checkCartStatus()">
+    <div class="container">
+        <nav>
+            <!-- navigation bar elements -->
+            <ul>
+                <li><a href="index.html"><img id="logo" src="images/logo.png" alt="shop_logo" height="60"></a></li>
+                <!-- in reverse order than seen on page due to float right property -->
+                <a href="shoppingcart.html">
+                    <li class="nav_bar_options"><img src="images/cart-icon.svg" alt="cart_icon" height="26"></li>
+                    <div class="nav_bar_options" id="cart_indication">1</div>
+                </a>
+                <li class="nav_bar_options">ABOUT</li>
+                <li class="nav_bar_options"><a href="productbrowsing.html">SHOP ROLLS</a></li>
+                <li class="nav_bar_options" id="selected_page"><a href="index.html">HOME</a></li>
+            </ul>
+            <br><br>
+        </nav>
+
+        <header>
+            <!-- header elements -->
+            <br>
+            <h1>WELCOME TO OUR SHOP!</h1>
+            <hr>
+            <img id="home_logo" src="images/homepage-icon.png" alt="larger_shop_logo" height="220">
+            <span id="start_order"><a href="productbrowsing.html">START AN ORDER!</a></span>
+            <hr>
+            <h2>CHECK OUT OUR ROLLS!</h2>
+        </header>
+
+        <!-- utilizes a grid to auto-add images in a nice formatting -->
+        <main>
+            <img class="roll_images" src="images/rolls-1.jpg" alt="image_of_rolls_1" height="270">
+            <img class="roll_images" src="images/rolls-2.webp" alt="image_of_rolls_2" height="270">
+            <img class="roll_images" src="images/rolls-5.png" alt="image_of_rolls_5" height="270">
+        </main>
+
+    </div>
+</body>
+</html>

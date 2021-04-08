@@ -1,0 +1,139 @@
+main {
+    display: grid;
+    grid-gap: 6px;
+    /* spacing should be the same, so can use repeat function */
+    grid-template-columns: 25% 20% 5% 50% ;
+    grid-template-rows: 7% 5% 80% 5% 10% 30%;
+    grid-template-areas: "roll_label quantity_label vertical_line continue_shopping"
+                         "thick_line thick_line vertical_line continue_shopping"
+                         "pump_roll pump_quantity vertical_line continue_shopping"
+                         "second_thick_line second_thick_line vertical_line continue_shopping"
+                         "total none_3 vertical_line continue_shopping"
+                         "checkout_button checkout_button vertical_line continue_shopping";
+    margin: 10px;
+    line-height: 10px;
+    background-color: white;
+    font-weight: lighter;
+    font-size:27px;
+    /*justify-content: center;*/
+    /*justify-items: left;*/
+    align-items: stretch;
+    /*align-content: center;*/
+    grid-auto-rows: minmax(100px, auto);
+    /* automatically populates the page by row */
+    grid-auto-flow: row;
+    text-align: left;
+}
+
+hr{
+    display: block;
+    unicode-bidi: isolate;
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+}
+
+.thick_line {
+
+}
+
+.vertical_line {
+    grid-area: vertical_line;
+}
+
+.pump_flavor {
+    grid-area: pump_flavor; /* assigns grid area to class */
+}
+
+.blackberry_flavor {
+    grid-area: blackberry_flavor; /* assigns grid area to class */
+}
+
+.roll_label {
+    grid-area: roll_label; /* assigns grid area to class */
+}
+
+.quantity_label {
+    grid-area: quantity_label; /* assigns grid area to class */
+}
+
+/* formats continue shopping rolls button */
+.continue_shopping {
+    grid-area: continue_shopping; /* assigns grid area to class */
+}
+
+#continue_shopping_button {
+    background-color: #D2ACAC;
+    border: medium solid #A18484;
+    border-radius: 19px;
+    padding: 14px 20px;
+    text-align: center;
+    font-family: Nunito, sans-serif;
+    font-style: normal;
+    font-variant: normal;
+    font-size: 40px;
+    float: left;
+    margin: 10px;
+    align-self: center;
+}
+
+.pump_roll {
+    grid-area: pump_roll; /* assigns grid area to class */
+}
+
+.pump_quantity {
+    grid-area: pump_quantity; /* assigns grid area to class */
+}
+
+.blackberry_roll {
+    grid-area: blackberry_roll; /* assigns grid area to class */
+}
+
+.blackberry_quantity {
+    grid-area: blackberry_quantity; /* assigns grid area to class */
+}
+
+.total {
+    grid-area: total; /* assigns grid area to class */
+}
+
+horizontal {
+    margin: 5px;
+}
+.flavor {
+    margin-left: 20px;
+    margin-right: 10px;
+    font-size: 15px;
+}
+
+/* formats checkout button */
+.checkout_button {
+    grid-area: checkout_button;
+    background-color: #D2ACAC;
+    border: medium solid #A18484;
+    border-radius: 19px;
+    padding: 14px 20px;
+    text-align: center;
+    font-family: Nunito, sans-serif;
+    font-style: normal;
+    font-variant: normal;
+    font-size: 55px;
+    float: left;
+    margin: 10px;
+    align-self: center;
+}
+
+.remove_button {
+    background-color: #D2ACAC;
+    border: medium solid #A18484;
+    border-radius: 10px;
+    /*padding: 14px 20px;*/
+    text-align: center;
+    font-style: normal;
+    font-variant: normal;
+    font-size: 12px;
+    /*float: left;*/
+    /*margin: 10px;*/
+    align-self: center;
+}

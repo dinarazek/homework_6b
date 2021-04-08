@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BUN BUN BAKE SHOP</title>
+    <!-- access to different fonts-->
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Nunito" />
+    <!-- links CSS files -->
+    <link href="style.css" type="text/css" rel="stylesheet">
+    <link href="detail.css" type="text/css" rel="stylesheet">
+    <!-- link JS files -->
+    <script src="productdetail.js" type="text/javascript"></script>
+</head>
+
+<body onload="setTitleAndCheckCartStatus()">
+    <div class="container">
+        <nav>
+            <!-- navigation bar elements -->
+            <ul>
+                <li><a href="index.html"><img id="logo" src="images/logo.png" alt="shop_logo" height="60"></a></li>
+                <!-- in reverse order than seen on page due to float right property -->
+                <a href="shoppingcart.html">
+                    <li class="nav_bar_options"><img src="images/cart-icon.svg" alt="cart_icon" height="26"></li>
+                    <div class="nav_bar_options" id="cart_indication">1</div>
+                </a>
+                <li class="nav_bar_options">ABOUT</li>
+                <li class="nav_bar_options" id="selected_page"><a href="productbrowsing.html">SHOP ROLLS</a></li>
+                <li class="nav_bar_options"><a href="index.html">HOME</a></li>
+            </ul>
+            <br><br>
+        </nav>
+
+        <header>
+            <!-- header elements -->
+            <br>
+            <h1>SHOP ROLLS!</h1>
+            <button type="button" id="relaxed_button" class="view_options">RELAXED</button>
+            <button type="button" id="dense_button" class="view_options">DENSE</button>
+            <hr>
+        </header>
+
+        <div class="pumpkin-detail">
+            <a href="productbrowsing.html">
+                <img class="close_detail" src="images/red_x.png" alt="close_detail_page">
+            </a>
+            <br>
+            <main>
+                <!-- utilizes a grid to place elements properly on the page -->
+                <div class="roll_label">BEST SELLER</div>
+                <img class="large_roll_image" id='id_large_roll' src="images/none-roll.png" alt="pumpkin-roll-image">
+                <div class="roll_images">
+                    <img class="small_image_edit" id='id_small_roll_1' src="images/rolls-3.png" alt="pumpkin-roll-image_2" height="100">
+                    <img class="small_image_edit" id='id_small_roll_2' src="images/rolls-6.jpg" alt="pumpkin-roll-image_3" height="100">
+                    <img class="small_image_edit" id='id_small_roll_3' src="images/rolls-7.png" alt="pumpkin-roll-image_4" height="100">
+                </div>
+                <div class="roll_title" id="roll_title">PUMPKIN SPICE</div>
+                <div class="price_title">$6 <span class="price">PER ROLL</span></div>
+                <div class="description_title">DESCRIPTION</div>
+                <div class="ingredients_title">INGREDIENTS</div>
+                <div class="description">
+                    We’re adding a pumpkin twist to our original roll!
+                    Layers of cinnamon are wrapped in fresh dough and swirled
+                    with pumpkin spice. Buy now while they are still in season!
+                    <hr>
+                </div>
+                <div class="flavor_options">
+                    <label>FLAVOR</label>
+                    <button class="drop-down-button" onclick="show('flavors')" id="flavor-button">NONE</button>
+                    <div class="dropdown-content" id="flavors">
+                        <ul id="none" onclick="replace('flavor-button', 'NONE')">NONE</ul>
+                        <ul id="sugar-milk" onclick="replace('flavor-button', 'SUGAR-MILK')">SUGAR-MILK</ul>
+                        <ul id="vanilla-milk" onclick="replace('flavor-button', 'VANILLA-MILK')">VANILLA-MILK</ul>
+                        <ul id="chocolate" onclick="replace('flavor-button', 'CHOCOLATE')">CHOCOLATE</ul>
+                    </div>
+                </div>
+                <div class="quantity_options">
+                    <label>QUANTITY</label>
+                    <button class="drop-down-button" onclick="show('quantities')" id="quantity-button">1</button>
+                    <div class="dropdown-content" id="quantities">
+                        <ul id="1" onclick="replace('quantity-button', '1')">1</ul>
+                        <ul id="3" onclick="replace('quantity-button', '3')">3</ul>
+                        <ul id="6" onclick="replace('quantity-button', '6')">6</ul>
+                        <ul id="12" onclick="replace('quantity-button', '12')">12</ul>
+                    </div>
+                </div>
+                <a class="add_to_cart" href="shoppingcart.html" onclick="addToCart()">
+                <button class="add_to_cart_button">
+                    <img src="images/cart-icon.svg" alt="cart-icon" height="30">
+                    ADD TO CART!
+                </button>
+                </a>
+            </main>
+        </div>
+    </div>
+</body>
