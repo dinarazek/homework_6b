@@ -10,7 +10,7 @@
     <link href="style.css" type="text/css" rel="stylesheet">
     <link href="home.css" type="text/css" rel="stylesheet">
     <!-- link JS files -->
-    <script src="productdetail.js" type="text/javascript"></script>
+    <script src="productdetail.js"></script>
 </head>
 
 <body onload="checkCartStatus()">
@@ -20,10 +20,12 @@
             <ul>
                 <li><a href="index.html"><img id="logo" src="images/logo.png" alt="shop_logo" height="60"></a></li>
                 <!-- in reverse order than seen on page due to float right property -->
-                <a href="shoppingcart.html">
-                    <li class="nav_bar_options"><img src="images/cart-icon.svg" alt="cart_icon" height="26"></li>
+                <li class="nav_bar_options">
+                    <a href="shoppingcart.html">
+                        <img src="images/cart-icon.svg" alt="cart_icon" height="26">
+                    </a>
                     <div class="nav_bar_options" id="cart_indication">1</div>
-                </a>
+                </li>
                 <li class="nav_bar_options">ABOUT</li>
                 <li class="nav_bar_options"><a href="productbrowsing.html">SHOP ROLLS</a></li>
                 <li class="nav_bar_options" id="selected_page"><a href="index.html">HOME</a></li>

@@ -164,12 +164,13 @@ main {
     text-align: center;
     font-family: Nunito, sans-serif;
     z-index: 1;
+    list-style-type: none;
 }
 .show {
     display:block;
 }
 
-.dropdown-content ul:hover {
+.dropdown-content div:hover {
   background-color: dimgrey;
 }
 
@@ -182,11 +183,9 @@ main {
     margin-bottom: 40px;
 }
 
-.add_to_cart {
-    grid-area: add_to_cart_button; /* assigns grid area to class */
-}
 /* formats add to cart button */
 .add_to_cart_button {
+    grid-area: add_to_cart_button;
     background-color: #D2ACAC;
     border: medium solid #A18484;
     border-radius: 19px;
