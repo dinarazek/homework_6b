@@ -116,11 +116,11 @@ function removeRoll(cart_index) {
 
 function addCartItemsToPage() {
     var cart_full = localStorage.getItem('cart');
+    var total = 0;
     if (cart_full == 'true') {
         var current_cart = JSON.parse(localStorage.getItem('current_cart'));
         var place_to_add_roll = document.getElementById("pump_roll");
         var place_to_add_quantity = document.getElementById("pump_quantity");
-        var total = 0;
         for (let i = 0; i < current_cart.length; i++) {
             // add ids to enable removal
             var roll = document.createElement("h5");
@@ -152,7 +152,9 @@ function addCartItemsToPage() {
             var quantity_text = document.createTextNode(current_cart[i].quantity);
             quantity.appendChild(quantity_text);
             place_to_add_quantity.appendChild(quantity);
-            place_to_add_quantity.appendChild(document.createElement("br"));
+            var line_spacing = document.createElement("div");
+            line_spacing.setAttribute('class', 'formatted_quantity');
+            place_to_add_quantity.appendChild(line_spacing);
             total += parseInt(current_cart[i].quantity) * 6;
         }
     }

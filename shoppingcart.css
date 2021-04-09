@@ -3,7 +3,7 @@ main {
     grid-gap: 6px;
     /* spacing should be the same, so can use repeat function */
     grid-template-columns: 25% 20% 5% 50% ;
-    grid-template-rows: 7% 5% 80% 5% 10% 30%;
+    grid-template-rows: 20px 5px auto 15px 50px 100px;
     grid-template-areas: "roll_label quantity_label vertical_line continue_shopping"
                          "thick_line thick_line vertical_line continue_shopping"
                          "pump_roll pump_quantity vertical_line continue_shopping"
@@ -28,14 +28,14 @@ main {
 hr{
     display: block;
     unicode-bidi: isolate;
-    margin-block-start: .5em;
-    margin-block-end: .5em;
-    margin-inline-start: auto;
-    margin-inline-end: auto;
 }
 
 .thick_line {
+    grid-area: thick_line;
+}
 
+.second_thick_line {
+    grid-area: second_thick_line;
 }
 
 .vertical_line {
@@ -96,8 +96,12 @@ hr{
 
 .total {
     grid-area: total; /* assigns grid area to class */
+    margin: 20px 0px;
 }
 
+.formatted_quantity {
+    margin: 97px 0px;
+}
 horizontal {
     margin: 5px;
 }
@@ -120,8 +124,8 @@ horizontal {
     font-variant: normal;
     font-size: 55px;
     float: left;
-    margin: 10px;
     align-self: center;
+    margin: 0px 15px;
 }
 
 .remove_button {
