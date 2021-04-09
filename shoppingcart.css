@@ -25,11 +25,6 @@ main {
     text-align: left;
 }
 
-hr{
-    display: block;
-    unicode-bidi: isolate;
-}
-
 .thick_line {
     grid-area: thick_line;
 }
@@ -40,6 +35,8 @@ hr{
 
 .vertical_line {
     grid-area: vertical_line;
+    border-right: 3px solid #BDBDBD;
+    top: 10px;
 }
 
 .pump_flavor {
@@ -72,7 +69,7 @@ hr{
     font-family: Nunito, sans-serif;
     font-style: normal;
     font-variant: normal;
-    font-size: 40px;
+    font-size: 39px;
     float: left;
     margin: 10px;
     align-self: center;
