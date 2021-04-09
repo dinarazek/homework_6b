@@ -1,9 +1,11 @@
+// creates Roll object
 function Roll(roll, flavor, quantity) {
     this.roll = roll;
     this.flavor = flavor;
     this.quantity = quantity;
 }
 
+// changes current roll selected in localStorage
 function selectedRoll(roll) {
     var current_roll = new Roll(roll, 'NONE', '1');
     localStorage.setItem('current_roll', JSON.stringify(current_roll));
@@ -14,6 +16,7 @@ function setTitleAndCheckCartStatus() {
     checkCartStatus();
 }
 
+// sets the roll title on the detail page based on what the user selects
 function setRollTitle() {
     let current_roll = JSON.parse(localStorage.getItem('current_roll'));
     document.getElementById('roll_title').innerHTML = current_roll.roll;
@@ -73,7 +76,7 @@ function checkCartStatus() {
     else {
         document.getElementById("cart_indication").style.display = "none";
     }
-    console.log(JSON.parse(localStorage.getItem('current_cart')));
+    // console.log(JSON.parse(localStorage.getItem('current_cart')));
 }
 
 // sets cart having items to true
@@ -84,6 +87,7 @@ function addToCart() {
     let roll_to_add = new Roll(current_roll.roll, current_roll.flavor, current_roll.quantity);
     let current_cart;
     if (cart_full == 'true') {
+        // adds roll to list in cart and changes cart indicator
         current_cart = JSON.parse(localStorage.getItem('current_cart'));
         current_cart.push(roll_to_add);
         document.getElementById('cart_indication').innerHTML = current_cart.length;
@@ -97,9 +101,11 @@ function addToCart() {
     }
 }
 
+// removes the selected roll from the cart
 function removeRoll(cart_index) {
     var current_cart = JSON.parse(localStorage.getItem("current_cart"));
     // delete current_cart[cart_index]; <-- leaves undefined index
+    // creates a new cart that doesn't add the removed element
     var new_cart = [];
     for (let i = 0; i < current_cart.length; i++) {
         if (i != cart_index) {
@@ -107,13 +113,14 @@ function removeRoll(cart_index) {
         }
     }
     // when cart is emptied, change cart value to reflect empty cart
-    if (new_cart == []) {
+    if (new_cart.length == 0) {
         localStorage.setItem("cart", 'false');
     }
     localStorage.setItem("current_cart", JSON.stringify(new_cart));
     location.reload(); // reloads the page to reflect the updated cart
 }
 
+// add rolls to the cart page
 function addCartItemsToPage() {
     var cart_full = localStorage.getItem('cart');
     var total = 0;
@@ -123,11 +130,13 @@ function addCartItemsToPage() {
         var place_to_add_quantity = document.getElementById("pump_quantity");
         for (let i = 0; i < current_cart.length; i++) {
             // add ids to enable removal
+            // creates roll title
             var roll = document.createElement("h5");
             var roll_text = document.createTextNode(current_cart[i].roll);
             roll.appendChild(roll_text);
             place_to_add_roll.appendChild(roll);
 
+            // adds roll flavor
             var flavor = document.createElement("label");
             var flavor_text;
             if (current_cart[i].flavor != "NONE") {
@@ -141,6 +150,7 @@ function addCartItemsToPage() {
             flavor.setAttribute('class', 'flavor');
             place_to_add_roll.appendChild(flavor);
 
+            // adds remove button
             var remove_button = document.createElement("button");
             remove_button.innerHTML = "REMOVE";
             remove_button.setAttribute('class', 'remove_button');
@@ -148,6 +158,7 @@ function addCartItemsToPage() {
             remove_button.setAttribute('id', current_cart[i].roll + "_" + i.toString());
             remove_button.setAttribute('onclick', 'removeRoll(' + i.toString() + ')');
 
+            // adds quantity value
             var quantity = document.createElement("h5");
             var quantity_text = document.createTextNode(current_cart[i].quantity);
             quantity.appendChild(quantity_text);
@@ -165,38 +176,3 @@ function AddItemsToPageAndCheckCartStatus() {
     checkCartStatus();
     addCartItemsToPage();
 }
-
-// HW6B preliminary work
-
-// var roll_clicked;
-// function select_roll(roll) {
-//     localStorage.setItem('roll_clicked', JSON.stringify(roll));
-//     roll_clicked = roll;
-//     console.log(roll_clicked);
-// }
-//
-// function replaceRolls() {
-//     console.log('here at all')
-//     var roll = JSON.parse(localStorage.getItem("savedAnimal"));
-//     console.log(roll_clicked, ' roll')
-//     if (roll_clicked == 'pumpkin-spice') {
-//         replaceImages('rolls-1', 'rolls-6', 'rolls-3', 'rolls-7');
-//     }
-//     else if (roll_clicked == 'original') {
-//         console.log('made it in')
-//         replaceImages('rolls-1', 'rolls-6', 'rolls-3', 'rolls-7');
-//     }
-//     else {
-//         return;
-//     }
-//     console.log('replaced');
-// }
-
-// replace srcs of photos to match clicked on roll
-// function replaceImages(large_photo, small_photo_1, small_photo_2, small_photo_3) {
-//     console.log('here woo');
-//     document.getElementById("id_large_roll").src = "images/" + large_photo;
-//     document.getElementById("id_small_roll_1").src = "images/" + small_photo_1;
-//     document.getElementById("id_small_roll_2").src = "images/" + small_photo_2;
-//     document.getElementById("id_small_roll_3").src = "images/" + small_photo_3;
-// }

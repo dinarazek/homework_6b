@@ -49,22 +49,25 @@
             <br>
             <main>
                 <!-- utilizes a grid to place elements properly on the page -->
+                <!-- images -->
                 <img class="large_roll_image" id='id_large_roll' src="images/none-roll.png" alt="pumpkin-roll-image">
                 <div class="roll_images">
                     <img class="small_image_edit" id='id_small_roll_1' src="images/rolls-3.png" alt="pumpkin-roll-image_2" height="100">
                     <img class="small_image_edit" id='id_small_roll_2' src="images/rolls-6.jpg" alt="pumpkin-roll-image_3" height="100">
                     <img class="small_image_edit" id='id_small_roll_3' src="images/rolls-7.png" alt="pumpkin-roll-image_4" height="100">
                 </div>
+                <!-- detail information -->
                 <div class="roll_title" id="roll_title">PUMPKIN SPICE</div>
                 <div class="price_title">$6 <span class="price">PER ROLL</span></div>
                 <div class="description_title">DESCRIPTION</div>
                 <div class="ingredients_title">INGREDIENTS</div>
                 <div class="description">
-                    We’re adding a pumpkin twist to our original roll!
+                    We’re adding a twist to our original roll!
                     Layers of cinnamon are wrapped in fresh dough and swirled
-                    with pumpkin spice. Buy now while they are still in season!
+                    with spice. Buy now while they are still in season!
                     <hr>
                 </div>
+                <!-- user edited elements -->
                 <div class="flavor_options">
                     <label>FLAVOR</label>
                     <button class="drop-down-button" onclick="show('flavors')" id="flavor-button">NONE</button>
@@ -85,6 +88,7 @@
                         <div id="12" onclick="replace('quantity-button', '12')">12</div>
                     </div>
                 </div>
+                <!-- add to cart button -->
                 <a class="add_to_cart_button" href="shoppingcart.html" onclick="addToCart()">
                     <img src="images/cart-icon.svg" alt="cart-icon" height="30">
                     ADD TO CART!

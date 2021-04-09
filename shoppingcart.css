@@ -15,10 +15,7 @@ main {
     background-color: white;
     font-weight: lighter;
     font-size:27px;
-    /*justify-content: center;*/
-    /*justify-items: left;*/
     align-items: stretch;
-    /*align-content: center;*/
     grid-auto-rows: minmax(100px, auto);
     /* automatically populates the page by row */
     grid-auto-flow: row;
@@ -99,9 +96,12 @@ main {
 .formatted_quantity {
     margin: 97px 0px;
 }
+
+/* formats horizontal line */
 horizontal {
     margin: 5px;
 }
+
 .flavor {
     margin-left: 20px;
     margin-right: 10px;
@@ -125,6 +125,7 @@ horizontal {
     margin: 0px 15px;
 }
 
+/* formats remove button */
 .remove_button {
     background-color: #D2ACAC;
     border: medium solid #A18484;
